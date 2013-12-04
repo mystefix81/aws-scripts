@@ -14,7 +14,6 @@
 #
 #
 
-import os
 import boto
 from boto import ec2
 import boto.ec2.autoscale
