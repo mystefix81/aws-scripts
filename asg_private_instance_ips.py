@@ -9,9 +9,9 @@
 #
 #The following rights needs to be granted via role:
 #
-#DescribeInstances
-#DescribeAutoScalingInstances
-#
+#ec2:DescribeInstances
+#autoscaling:DescribeAutoScalingInstances
+#autoscaling:DescribeAutoScalingGroups
 #
 
 import boto
