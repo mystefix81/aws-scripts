@@ -3,6 +3,10 @@
 #
 #requires python boto libary and prettytable
 #
+#requires .boto file in your home directory with the following syntax
+#aws_access_key_id= xxxxx
+#aws_secret_access_key= yyyy
+#
 #script will fetch all instances within the AWS account 
 
 import boto.ec2
