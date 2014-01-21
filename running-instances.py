@@ -1,5 +1,4 @@
 #!/usr/bin/python
-#!/usr/bin/python
 #
 #
 #requires python boto libary and prettytable
