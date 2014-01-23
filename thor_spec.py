@@ -4,9 +4,7 @@ from boto import ec2, exception
 import json
 
 regions = dict()
-for region in ec2.regions():
-    if not region.name in [ "us-east-1", "us-west-1", "sa-east-1", "eu-west-1" ]:
-        continue
+for region in ec2.connection.EC2Connection().get_all_regions():
     regions[region.name] = dict()
     ec2_conn = region.connect()
     reservations = ec2_conn.get_all_instances()
