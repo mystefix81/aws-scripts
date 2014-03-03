@@ -5,19 +5,19 @@ import argparse
 
 parser = argparse.ArgumentParser(description="Rotate Access Keys.")
 parser.add_argument(
-        "--user",
         "-u",
+        "--user",
         required=True,
         help="The IAM user to rotate the key for."
         )
 parser.add_argument(
-        "--access_key_id",
         "-a",
+        "--access_key_id",
         help="The access key to rotate and use for authentication."
         )
 parser.add_argument(
-        "--secret_access_key",
         "-s",
+        "--secret_access_key",
         help="The secret key to rotate and use for authentication."
         )
 
