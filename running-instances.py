@@ -13,8 +13,13 @@ def get_region_instances(region, tables):
     if reservations:
         for r in reservations:
             for i in r.instances:
+                try:
+                    instance_name = i.tags['Name']
+                except KeyError as e:
+                    instance_name = "N/A"
+                    pass
                 x.add_row([
-                    i.tags['Name'],
+                    instance_name,
                     i.key_name,
                     i.instance_type,
                     i.placement,
