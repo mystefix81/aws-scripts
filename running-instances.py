@@ -6,7 +6,7 @@ from boto.ec2.connection import EC2Connection
 from prettytable import PrettyTable
 from threading import Thread
 
-parser = argparse.ArgumentParser(description="Running ec2 instances in AWS account.")
+parser = argparse.ArgumentParser(description="Show available ec2 instances in AWS account.")
 parser.add_argument(
         "-p",
         "--profile",
