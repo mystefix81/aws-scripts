@@ -11,15 +11,13 @@ parser.add_argument(
         "-p",
         "--profile",
         required=False,
+        default=None,
         help="The profile to use from .boto, if not provided the default credentials will be used."
         )
 args = parser.parse_args()
 
-if not args.profile:
-    args.profile = ""
-
 def get_region_instances(region, tables):
-    x = PrettyTable(["Name", "Key-Name", "Type", "Placement", "Public-DNS", "Instance-ID", "State", "Launch Time"])
+    x = PrettyTable(["Name", "Key-Name", "Type", "Placement", "Public-DNS", "Private-IP", "Instance-ID", "State", "Launch Time"])
     x.padding_width = 1
     ec2 = boto.ec2.connect_to_region(region.name,aws_access_key_id=auth.aws_access_key_id,aws_secret_access_key=auth.aws_secret_access_key)
     reservations = ec2.get_all_instances()
@@ -37,6 +35,7 @@ def get_region_instances(region, tables):
                     i.instance_type,
                     i.placement,
                     i.public_dns_name,
+                    i.private_ip_address,
                     i.id,
                     i.state,
                     i.launch_time
